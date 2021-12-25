@@ -1,0 +1,71 @@
+atradai_temporal_anomaly_army = {
+	defensive = yes
+	damage = 100000
+	health = 100000
+	has_morale = no
+	has_species = no
+	morale_damage = 1000
+	collateral_damage = 0
+	icon = GFX_army_type_psionic
+	war_exhaustion = 0
+
+	potential = {
+		always = no
+	}
+}
+
+atradai_underground_vault_armies = {
+	damage = 3.0
+	morale_damage = 2.5
+	collateral_damage = 5.0
+	war_exhaustion = 0.25
+	health = 0.6
+	has_morale = no
+	time = 25
+	icon = GFX_army_type_xenomorph
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 350
+			food = 50
+		}
+
+		upkeep = {
+			food = 3
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			text = atra_underground_vault_troop_limit_tooltip
+			planet = { has_planet_flag = atra_underground_vault }
+			owner = {
+				has_country_flag = embraced_atra_vault
+				NOT = {
+					 check_variable = {
+						which = "atra_underground_vault_soldier_count"
+						value = 250
+					}
+				}
+			}
+		}
+	}
+	on_queued = {
+		owner = {
+			change_variable = {
+				which = "atra_underground_vault_soldier_count"
+				value = 1
+			}
+		}
+	}
+
+	on_unqueued = {
+		owner = {
+			change_variable = {
+				which = "atra_underground_vault_soldier_count"
+				value = -1
+			}
+		}
+	}
+}

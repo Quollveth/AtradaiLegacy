@@ -1,0 +1,49 @@
+#colleda_ruins
+site_colleda_ruins = {
+	desc = "site_colleda_ruins.desc"
+	picture = GFX_evt_colleda_ruins
+	stages = 6
+	weight = { base = 0 }
+	visible = { default_site_visible_trigger = yes }
+	allow = { exists = leader leader = { leader_class = scientist has_level >= 3 } }
+	stage = { difficulty = 1 icon = GFX_archaeology_runes_C1 event = atradai_colleda_site.001 } 
+	stage = { difficulty = 1 icon = GFX_archaeology_runes_C2 event = atradai_colleda_site.002 }
+	stage = { difficulty = 2 icon = GFX_archaeology_runes_C3 event = atradai_colleda_site.003 }
+	stage = { difficulty = 2 icon = GFX_archaeology_runes_C4 event = atradai_colleda_site.004 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_C5 event = atradai_colleda_site.005 }
+	stage = { difficulty = 3 icon = GFX_archaeology_runes_C6 event = atradai_colleda_site.006 }
+	on_roll_failed = { from = { standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events } } }
+}
+
+#control center
+site_atradai_control_center_ruins = {
+	desc = "site_atradai_control_center_ruins.desc"
+	picture = GFX_evt_atradai_control_center_ruins
+	stages = 5
+	weight = { base = 0 }
+	visible = { default_site_visible_trigger = yes }
+	allow = { exists = leader leader = { leader_class = scientist has_level >= 5 } }
+	stage = { difficulty = 1 icon = GFX_archaeology_runes_C1 event = atradai_colleda_site.007 } 
+	stage = { difficulty = 1 icon = GFX_archaeology_runes_C2 event = atradai_colleda_site.008 }
+	stage = { difficulty = 4 icon = GFX_archaeology_runes_C3 event = atradai_colleda_site.009 }
+	stage = { difficulty = 4 icon = GFX_archaeology_runes_C4 event = atradai_colleda_site.010 }
+	stage = { difficulty = 5 icon = GFX_archaeology_runes_C5 event = atradai_colleda_site.011 }
+	on_roll_failed = { from = { standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events } } }
+}
+
+
+
+
+
+#underground vault
+site_atradai_underground_vault = {
+	desc = "site_atradai_underground_vault.desc"
+	picture = derelict_interior
+	stages = 3
+	weight = { base = 0 }
+	visible = { default_site_visible_trigger = yes }
+	allow = { always = yes }
+	stage = { difficulty = 4 icon = GFX_archaeology_runes_C3 event = atradai_colleda_site.5000 }
+	stage = { difficulty = 4 icon = GFX_archaeology_runes_C4 event = atradai_colleda_site.5001 }
+	stage = { difficulty = 5 icon = GFX_archaeology_runes_C5 event = atradai_colleda_site.5002 }
+}

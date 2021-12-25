@@ -1,0 +1,219 @@
+##############
+### DEBRIS ###
+##############
+
+create_singular_debris = {
+	random_list = {
+		1 = { create_ambient_object = { type = "large_debris_object"		location = this } }
+		1 = { create_ambient_object = { type = "medium_debris_01_object"	location = this } }
+		1 = { create_ambient_object = { type = "medium_debris_02_object"	location = this } }
+		1 = { create_ambient_object = { type = "small_debris_object"		location = this } }
+		1 = { create_ambient_object = { type = "large_debris_object"		entity_offset_height = { min = -0 max = -20 } location = this } }
+		1 = { create_ambient_object = { type = "medium_debris_01_object"	entity_offset_height = { min = -0 max = -20 } location = this } }
+		1 = { create_ambient_object = { type = "medium_debris_02_object"	entity_offset_height = { min = -0 max = -20 } location = this } }
+		1 = { create_ambient_object = { type = "small_debris_object"		entity_offset_height = { min = -0 max = -20 } location = this } }
+	}
+	random_list = {
+		1 = { last_created_ambient_object = { set_location = { target = prev distance = 20 angle = random } } }
+		1 = { last_created_ambient_object = { set_location = { target = prev distance = 30 angle = random } } }
+		1 = { last_created_ambient_object = { set_location = { target = prev distance = 40 angle = random } } }
+		1 = { last_created_ambient_object = { set_location = { target = prev distance = 50 angle = random } } }
+		1 = { last_created_ambient_object = { set_location = { target = prev distance = 60 angle = random } } }
+	}
+}
+
+create_singular_system_debris = {
+	random_list = {
+		1 = { create_ambient_object = { type = "large_debris_object"		location = solar_system } }
+		1 = { create_ambient_object = { type = "medium_debris_01_object"	location = solar_system } }
+		1 = { create_ambient_object = { type = "medium_debris_02_object"	location = solar_system } }
+		1 = { create_ambient_object = { type = "small_debris_object"		location = solar_system } }
+		1 = { create_ambient_object = { type = "large_debris_object"		entity_offset_height = { min = -0 max = -20 } location = solar_system } }
+		1 = { create_ambient_object = { type = "medium_debris_01_object"	entity_offset_height = { min = -0 max = -20 } location = solar_system } }
+		1 = { create_ambient_object = { type = "medium_debris_02_object"	entity_offset_height = { min = -0 max = -20 } location = solar_system } }
+		1 = { create_ambient_object = { type = "small_debris_object"		entity_offset_height = { min = -0 max = -20 } location = solar_system } }
+	}
+}
+
+create_field_debris = {
+	random_list = {
+		1 = { while = { count = 4 create_singular_debris = yes } }
+		1 = { while = { count = 8 create_singular_debris = yes } }
+		1 = { while = { count = 12 create_singular_debris = yes } }
+		1 = { while = { count = 16 create_singular_debris = yes } }
+		1 = { while = { count = 20 create_singular_debris = yes } }
+	}
+}
+
+create_field_system_debris = {
+	random_list = {
+		1 = { while = { count = 8 create_singular_system_debris = yes } }
+		1 = { while = { count = 16 create_singular_system_debris = yes } }
+		1 = { while = { count = 24 create_singular_system_debris = yes } }
+		1 = { while = { count = 32 create_singular_system_debris = yes } }
+		1 = { while = { count = 40 create_singular_system_debris = yes } }
+	}
+}
+
+##############################
+### STAR EATER EFFECT ONLY ###
+##############################
+
+star_eater_effect_only = {
+	star = {
+		create_ambient_object = {
+			type = "star_explosion"
+			play_animation_once = yes
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+##################################################################
+### LETS JUST ADD EVERY PLANETARY FEATURE, WHAT COULD GO WRONG ###
+##################################################################
+
+atradai_add_gaia_features = {
+	#energy
+	add_deposit = d_arid_highlands
+	add_deposit = d_hot_springs
+	add_deposit = d_rushing_waterfalls
+	add_deposit = d_searing_desert
+	add_deposit = d_frozen_gas_lake
+	add_deposit = d_geothermal_vent
+	add_deposit = d_underwater_vent
+	add_deposit = d_tempestous_mountain
+	#mineral
+	add_deposit = d_veiny_cliffs
+	add_deposit = d_mineral_fields
+	add_deposit = d_rich_mountain
+	add_deposit = d_prosperous_mesa
+	add_deposit = d_ore_rich_caverns
+	add_deposit = d_submerged_ore_veins
+	#food
+	add_deposit = d_lichen_fields
+	add_deposit = d_bountiful_plains
+	add_deposit = d_rugged_woods
+	add_deposit = d_green_hills
+	add_deposit = d_forgiving_tundra
+	add_deposit = d_boggy_fens
+	add_deposit = d_nutritious_mudland
+	add_deposit = d_fungal_caves
+	add_deposit = d_lush_jungle
+	add_deposit = d_fertile_lands
+	add_deposit = d_great_river
+	add_deposit = d_black_soil
+	add_deposit = d_teeming_reef
+	add_deposit = d_tropical_island
+	add_deposit = d_fungal_forest 
+	#why are there so many food deposits
+	#sr
+	add_deposit = d_dust_desert
+	add_deposit = d_fuming_bog
+	add_deposit = d_crystal_forest 
+	#special
+	add_deposit = d_betharian_deposit
+	add_deposit = d_buzzing_plains
+	add_deposit = d_mineral_striations
+	add_deposit = d_natural_farmland
+}
+
+##################
+### PRIMITIVES ###
+##################
+
+#create first Atradai
+generate_first_atradai_primitives = {
+	set_global_flag = first_atradai_primitive_created
+	create_species = {
+		name = "Atradai"
+		plural = "Atradai"
+		class = HUM
+		portrait = mol12
+		homeworld = THIS
+		traits = {
+			trait = trait_pc_gaia_preference
+			trait = trait_atradai_intelligent
+			trait = trait_atradai_unimpressive
+			trait = trait_atradai_unionization
+		}
+		effect = {
+			save_global_event_target_as = atradai_species_p
+		}
+	}
+	create_country = {
+		name = "Atradai Clans"
+		name_list = random
+		authority = random
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_fanatic_materialist
+			ethic = ethic_egalitarian
+		}
+		flag={
+			icon={
+				category="ornate"
+				file="flag_ornate_10.dds"
+			}
+			background={
+				category="backgrounds"
+				file="inverted_v.dds"
+			}
+			colors={
+				"purple"
+				"beige"
+				"null"
+				"null"
+			}
+		}
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = first_atradai_age
+		set_primitive_age = first_atradai_age
+		set_country_flag = atradai_primitives
+		save_global_event_target_as = atradai_country_1
+	}
+	while = {
+		count = 14
+		create_pop = {
+			species = event_target:atradai_species_p
+		}
+	}
+}
+
+setup_first_atradai_primitives = {
+	set_owner = event_target:atradai_country_1
+	set_capital = yes
+	add_building = atradai_first_capital
+	add_building = atradai_first_outpost
+	add_building = atradai_first_lab
+	add_building = atradai_first_farm 
+	add_building = atradai_first_mine
+	add_building = atradai_first_factory
+	add_building = atradai_first_houses
+	create_temporal_anomaly_armies = yes
+}
+
+create_temporal_anomaly_armies = {
+	while = { 
+		count = 3	
+		create_army = { 
+			name = "Temporal Anomaly"	
+			owner = event_target:atradai_country_1
+			type = "atradai_temporal_anomaly_army" 
+		} 
+	}
+}

@@ -1,0 +1,11 @@
+d_atra_underground_vault = {
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = {
+		planet_size >= 1
+	}
+	drop_weight = { weight = 0 }
+	can_be_cleared = {
+		always = no
+	}
+}

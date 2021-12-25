@@ -1,0 +1,123 @@
+namespace = atradai_kilinea
+
+#discovered first kliniea
+ship_event = {
+	id = atradai_kilinea.001
+	title = "atradai_kilinea.001.name"
+	desc = "atradai_kilinea.001.desc"
+	picture = GFX_evt_kilinea
+	show_sound = event_radio_chatter
+	location = from
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { 
+			NOT = { 
+				has_country_flag = found_first_kilinea
+				is_ai = yes 
+			} 
+		}
+		from = {
+			has_star_flag = klini_system_d
+		}
+	}
+
+	immediate = { 
+		owner = {
+			set_country_flag = found_first_kilinea 
+		}
+		from = {
+			set_star_flag = real_kliniea
+			save_global_event_target_as = real_kilinea_target
+		}
+	}
+	option = { name = "atradai_kilinea.100.a" }
+}
+#surveyed kilinea, spawns dig site
+ship_event = {
+	id = atradai_kilinea.002
+	title = "atradai_kilinea.002.name"
+	desc = "atradai_kilinea.002.desc"
+	picture = GFX_evt_kilinea
+	show_sound = event_radio_chatter
+	location = from
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = surveyed_first_kilinea
+				is_ai = yes
+			}
+		}
+		from = {
+			has_planet_flag = klini_d_blackhole
+		}
+	}
+	immediate = {
+		set_country_flag = surveyed_first_kilinea
+		from = {
+			create_archaeological_site = site_colleda_ruins
+		}
+	}
+	option = { name = "atradai_kilinea.101.a" }
+}
+
+#first temporal shift
+#dialogue
+country_event = {
+	id = atradai_kilinea.1000
+	title = atradai_kilinea.1000.name
+	desc = atradai_kilinea.1000.desc
+	picture = GFX_evt_atradai_hypertemporal
+	show_sound = event_mysterious_signal
+	is_triggered_only = yes
+	location = from
+	immediate = {
+		log = "event kilinea 1000 is working"
+		from = {
+			system_event = { id = atradai_kilinea.1001 }
+		}
+	}
+}
+#actual event
+system_event = {
+	id = atradai_kilinea.1001
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		star_eater_effect_only = yes		
+		set_asteroid_belt = {
+			radius = 0
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = klini_asteroid_2 }
+			remove_planet = yes
+		}
+		every_system_planet = {
+			limit = { has_planet_flag = klini_planet }
+			change_pc = pc_barren_2
+
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = klini_asteroid }
+			change_pc = pc_gaia
+			set_planet_size = 30
+			set_planet_name = "NAME_colleda"
+			remove_planet_flag = klini_asteroid
+			set_planet_flag = primitive_colleda
+			planet_event = { id = atradai_colleda.100 }
+		}
+		every_system_planet = {
+			limit = { 
+				OR = { 
+					has_planet_flag = klini_star 
+					has_planet_flag = klini_primary_star 
+				}
+			}
+			change_pc = pc_m_giant_star
+			set_planet_size = 25
+		}
+	}
+}

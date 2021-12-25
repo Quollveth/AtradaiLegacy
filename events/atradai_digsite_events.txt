@@ -1,0 +1,262 @@
+namespace = atradai_colleda_site
+
+##Colleda ruins site
+#Sets up expedition
+fleet_event = {
+	id = atradai_colleda_site.001
+	title = "atradai_colleda_site.001.name"
+	desc = "atradai_colleda_site.001.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.001.a
+		#do stuff
+	}
+}
+#Explores the first megastructure
+fleet_event = {
+	id = atradai_colleda_site.002
+	title = "atradai_colleda_site.002.name"
+	desc = "atradai_colleda_site.002.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.002.a
+		#do stuff
+	}
+}
+#Ruined shellworld, unhabitable
+fleet_event = {
+	id = atradai_colleda_site.003
+	title = "atradai_colleda_site.003.name"
+	desc = "atradai_colleda_site.003.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			set_country_flag = found_colleda_ruins
+		}
+	}
+	option = {
+		name = atradai_colleda_site.003.a
+		#do stuff
+	}
+}
+#Explores second megastructure
+fleet_event = {
+	id = atradai_colleda_site.004
+	title = "atradai_colleda_site.004.name"
+	desc = "atradai_colleda_site.004.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = atradai_colleda_site.004.a
+		#do stuff
+	}
+}
+#Finds portal room
+fleet_event = {
+	id = atradai_colleda_site.005
+	title = "atradai_colleda_site.005.name"
+	desc = "atradai_colleda_site.005.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.005.a
+		#do stuff
+	}
+}
+#Portal activates, data stream activates
+fleet_event = {
+	id = atradai_colleda_site.006
+	title = "atradai_colleda_site.006.name"
+	desc = "atradai_colleda_site.006.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.006.a
+		#scope from fleet to solar system, find control center planet, spawn next dig site there
+		solar_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = klini_d_control }
+				create_archaeological_site = site_atradai_control_center_ruins
+			}
+		}
+	}
+}
+
+##Control center ruins site ####################################################################################################################
+#Sets up equipment
+fleet_event = {
+	id = atradai_colleda_site.007
+	title = "atradai_colleda_site.007.name"
+	desc = "atradai_colleda_site.007.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.007.a
+		#do stuff
+	}
+}
+#Finds entrance
+fleet_event = {
+	id = atradai_colleda_site.008
+	title = "atradai_colleda_site.008.name"
+	desc = "atradai_colleda_site.008.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.008.a
+		#do stuff
+	}
+}
+#Buried chamber
+fleet_event = {
+	id = atradai_colleda_site.009
+	title = "atradai_colleda_site.009.name"
+	desc = "atradai_colleda_site.009.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.009.a
+		#do stuff
+	}
+}
+#Main control room
+fleet_event = {
+	id = atradai_colleda_site.010
+	title = "atradai_colleda_site.010.name"
+	desc = "atradai_colleda_site.010.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.010.a
+		#do stuff
+	}
+}
+#Finds derelict AI
+fleet_event = {
+	id = atradai_colleda_site.011
+	title = "atradai_colleda_site.011.name"
+	desc = "atradai_colleda_site.011.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.011.a
+		owner = {
+			country_event = { id = hypertemporal_dialogue.1000 }
+		}
+	}
+}
+
+
+##Underground vault site ##########################################################################
+fleet_event = {
+	id = atradai_colleda_site.5000
+	title = "atradai_colleda_site.5000.name"
+	desc = "atradai_colleda_site.5000.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.5000.a
+		#do stuff
+	}
+}
+fleet_event = {
+	id = atradai_colleda_site.5001
+	title = "atradai_colleda_site.5001.name"
+	desc = "atradai_colleda_site.5001.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.5001.a
+		#do stuff
+	}
+}
+fleet_event = {
+	id = atradai_colleda_site.5002
+	title = "atradai_colleda_site.5002.name"
+	desc = "atradai_colleda_site.5002.desc"
+	picture = GFX_evt_resource_cache ####REMEMBER TO CHANGE THE IMAGES TO SOMETHING ELSE
+	archaeology = yes
+	show_sound = event_dig_site
+	location = from
+	is_triggered_only = yes
+	option = {
+		name = atradai_colleda_site.5002.a
+		owner = {
+			country_event = { id = atradai_colleda_site.5003 }
+		}
+	}
+}
+country_event = {
+	id = atradai_colleda_site.5003
+	title = "atradai_colleda_site.5003.name"
+	desc = "atradai_colleda_site.5003.desc"
+	picture = GFX_evt_treasure_pile
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = found_atra_vault
+	}
+
+	option = {
+		name = atradai_colleda_site.5003.a
+		custom_tooltip = atradai_colleda_site.5003.a.desc
+		set_country_flag = embraced_atra_vault
+		hidden_effect = {
+			set_variable = {
+				which = atra_underground_vault_soldier_count
+				value = 0
+			}
+		}
+	}
+	option = {
+		name = atradai_colleda_site.5003.b
+		custom_tooltip = atradai_colleda_site.5003.b.desc
+		set_country_flag = destroyed_atra_vault
+	}
+}

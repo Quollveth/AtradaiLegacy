@@ -1,0 +1,27 @@
+special_project = {
+	key = "ATRADAI_CLASS_20_PHYSICS_1"
+	cost = 2000
+	tech_department = physics_technology
+	picture = GFX_evt_physics_research
+	
+	event_chain = atradai_fix_class_20
+
+	event_scope = country_event
+
+	abort_trigger = {
+		OR = { 
+			has_technology = "tech_atradai_hypertemporal_repair_1"
+			has_tech_option = tech_atradai_hypertemporal_repair_1
+		}
+	}
+	
+	on_success = {
+		if = {
+            limit = { exists = owner }
+			country_event = { id = atradai_hypertemporal.1001 }
+		}
+	}
+	
+	on_fail = {
+	}
+}

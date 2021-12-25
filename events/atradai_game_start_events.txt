@@ -1,0 +1,14 @@
+namespace = atradai_start
+
+event = {
+	id = atradai_start.0 #runs all other game start events
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = atradai_start_event }
+	}
+	immediate = {
+		set_global_flag = atradai_start_event
+		#do stuff
+	}
+}

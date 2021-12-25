@@ -1,0 +1,149 @@
+#################
+### FIRST AGE ###
+#################
+
+atradai_first_capital = {
+	capital = yes
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	position_priority = 0
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	convert_to = {
+		building_hive_capital
+		building_machine_capital
+		building_colony_shelter
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_amenities_add = 25
+		planet_crime_add = -10
+		job_atradai_first_ruler_add = 1
+		job_atradai_first_administrator_add = 2
+	}
+}
+
+atradai_first_factory = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		job_atradai_first_artisans_add = 2
+	}
+}
+
+atradai_first_outpost = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		job_atradai_first_courier_add = 3
+	}
+}
+
+atradai_first_lab = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		job_atradai_first_researcher_add = 2
+	}
+}
+
+atradai_first_farm = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		job_atradai_first_farmer_add = 5
+	}
+}
+
+atradai_first_mine = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		job_atradai_first_miner_add = 3
+	}
+}
+
+atradai_first_houses = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+
+	potential = { always = 0 }
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_primitive = no
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 4
+	}
+}
+

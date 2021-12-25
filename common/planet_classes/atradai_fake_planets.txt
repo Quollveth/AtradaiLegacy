@@ -1,0 +1,51 @@
+pc_planetoid = {
+	entity = "barren_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_asteroid
+
+	atmosphere_color		= hsv { 0.1 0.4 0.7 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+
+	spawn_odds = 0
+	chance_of_ring = 0
+
+	planet_size = 3
+
+	colonizable = no
+}
+
+#A copy of the barren planet but with a different class to stop other mods from changing it to something else
+pc_barren_2 = {
+	entity = "barren_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_barren
+
+	atmosphere_color		= hsv { 0.1 0.4 0.7 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+
+	spawn_odds = 0
+
+	planet_size = { min = 12 max = 30 }
+	moon_size = { min = 6 max = 10 }
+
+	colonizable = no
+}
+#A copy of the shattered world with a different class to stop other mods form changing it into something else
+pc_shattered_2 = {
+	entity = "shattered_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_barren
+
+	atmosphere_color		= hsv { 0.1 0.4 0.7 }
+	atmosphere_intensity	= 1.0
+	atmosphere_width		= 0.5
+
+	spawn_odds = 0
+
+	planet_size = { min = 12 max = 30 }
+	moon_size = { min = 6 max = 10 }
+
+	colonizable = no
+}

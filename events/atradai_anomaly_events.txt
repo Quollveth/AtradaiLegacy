@@ -1,0 +1,27 @@
+namespace = atradai_anomaly
+
+
+#Underground vault
+ship_event = {
+	id = atradai_anomaly.5000
+	title = "atradai_anomaly.5000.name"
+	desc = "atradai_anomaly.5000.desc"
+	picture = GFX_evt_treasure_pile
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+
+	option = {
+		name = atradai_anomaly.5001.a
+		FROM = { 
+			create_archaeological_site = site_atradai_underground_vault
+			hidden_effect = {
+				set_planet_flag = atra_underground_vault 
+				add_blocker = {
+					type = d_atra_underground_vault
+				}
+			}
+		}
+	}
+}

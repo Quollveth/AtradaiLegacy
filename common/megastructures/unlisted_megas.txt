@@ -1,0 +1,6 @@
+colleda_ruined = {
+	entity = "colleda_planet_01_entity"
+	potential = { always = no }
+	place_entity_on_planet_plane = yes
+	portrait = "GFX_megastructure_construction_background"
+}

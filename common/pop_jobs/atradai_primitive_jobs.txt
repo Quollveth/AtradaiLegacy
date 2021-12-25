@@ -1,0 +1,193 @@
+atradai_first_farmer = {
+	category = worker
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			food = 3
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+	}
+}
+
+atradai_first_miner = {
+	category = worker
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 4
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+	}
+}
+
+atradai_first_courier = {
+	category = specialist
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	resources = {
+		category = planet_culture_workers
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			consumer_goods = 1
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+	}
+}
+
+atradai_first_artisans = {
+	category = specialist
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	resources = {
+		category = planet_artisans
+		produces = {
+			consumer_goods = 2.5
+		}
+		upkeep = {
+			minerals = 5
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+	}
+}
+
+atradai_first_researcher = {
+	category = specialist
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+		}
+		upkeep = {
+			consumer_goods = 2
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+	}
+}
+
+atradai_first_administrator = {
+	category = ruler
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 5
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			unity = 2
+		}
+	}
+
+	weight = {
+		weight = @ruler_job_weight
+	}
+}
+
+atradai_first_ruler = {
+	category = ruler
+	is_capped_by_modifier = yes
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+	}
+
+	possible = {
+		owner = { has_country_flag = atradai_primitives }
+	}
+
+	planet_modifier = {
+		planet_amenities_add = 8
+	}
+
+	resources = {
+		category = planet_farmers
+		produces = {
+			unity = 5
+		}
+	}
+
+	weight = {
+		weight = @ruler_job_weight
+	}
+}

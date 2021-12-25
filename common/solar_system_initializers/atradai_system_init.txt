@@ -1,0 +1,149 @@
+#Kliniea (destroyed)
+kliniea_destroyed_system = {
+	name = "NAME_klini_system_d"
+	class = sc_trinary_2
+	usage = misc_system_init
+	usage_odds = { base = 9999 modifier = { any_system = { has_star_flag = klini_d_system } factor = 0 } }
+	flags = { klini_system_d }
+	max_instances = 4
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 90
+	}
+
+	planet = {
+		name = "NAME_klini_a_blackhole"
+		class = pc_black_hole
+		orbit_angle = 0
+		orbit_distance = 0
+		size = 15
+
+		flags = { klini_d_blackhole }
+
+		planet = {
+			name = "NAME_colleda_ruins"
+			class = pc_colleda_ruin
+			size = 1
+			orbit_angle = 0
+			orbit_distance = 0
+			init_effect = {
+				clear_blockers = yes
+				set_planet_flag = forbid_guillis_planet_modifiers
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			}
+		}
+
+		planet = {
+			name = "NAME_klini_control"
+			class = pc_planetoid
+			size = 2
+			orbit_angle = 50
+			orbit_distance = 30
+
+			flags = { klini_d_control }
+
+			init_effect = {
+				clear_blockers = yes
+				set_planet_flag = forbid_guillis_planet_modifiers
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			}
+		}
+	}
+
+	planet = {
+		name = "NAME_klini_asteroid_1"
+		class = "pc_asteroid"
+		flags = { klini_asteroid }
+		orbit_distance = 90
+		orbit_angle = -150
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_klini_asteroid_2"
+		class = "pc_asteroid"
+		flags = { klini_asteroid_2 }
+		orbit_distance = 0
+		orbit_angle = -20
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_klini_star_1"
+		class = pc_neutron_star
+		size = 15
+		orbit_angle = 0
+		orbit_distance = 180
+		flags = { klini_primary_star }
+
+		planet = {
+			name = "NAME_klini_planet_1"
+			class = pc_shattered_2
+			size = 25
+			orbit_angle = 90
+			orbit_distance = 50
+
+			flags = { klini_planet }
+
+			init_effect = {
+				clear_blockers = yes
+				set_planet_flag = forbid_guillis_planet_modifiers
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			}
+		}
+		planet = {
+			name = "NAME_klini_planet_2"
+			class = pc_shattered_2
+			size = 25
+			orbit_angle = 180
+			orbit_distance = 0
+
+			flags = { klini_planet }
+
+			init_effect = {
+				clear_blockers = yes
+				set_planet_flag = forbid_guillis_planet_modifiers
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			}
+		}
+	}
+
+	planet = {
+		name = "NAME_klini_star_2"
+		class = pc_neutron_star
+		size = 15
+		flags = { klini_star }
+		orbit_angle = 120
+		orbit_distance = 0
+	}
+
+	planet = {
+		name = "NAME_klini_star_3"
+		class = pc_neutron_star
+		size = 15
+		flags = { klini_star }
+		orbit_angle = 120
+		orbit_distance = 0
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = atradai_hypertemporal_ruined
+			orbit_angle = 0
+			orbit_distance = 0
+			planet = star
+		}
+		create_field_system_debris = yes
+	}
+}

@@ -1,0 +1,59 @@
+##Hypertemporal shifter
+
+atradai_hypertemporal_ruined = {
+	entity = "hypertemporal_full_entity"
+	portrait = "GFX_megastructure_construction_background"
+	potential = { always = no }
+}
+
+atradai_hypertemporal_repair_1 = {
+	entity = "hypertemporal_full_entity"
+	construction_entity = "neutronium_gigaforge_1_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	upgrade_from = { atradai_hypertemporal_ruined }
+
+	build_time = 5000
+	resources = {
+		category = megastructures
+		cost = { 
+			alloys = 15000 #15k
+			energy = 3500
+			minor_artifacts = 15
+		}
+		produces = {
+			energy = 1000
+			physics_research = 300
+			society_research = 300
+			engineering_research = 300
+		}
+	}
+	
+	possible = { 
+		from = { 
+			has_technology = tech_atradai_hypertemporal_repair_1 
+			has_technology = tech_mega_engineering
+		}
+		custom_tooltip = {
+			fail_text = "hypertemporal_one_per_galaxy"
+			from = { NOT = { has_global_flag = restoring_hypertemporal_1 } }
+		} 
+	}
+
+	on_build_start = {
+		set_global_flag = restoring_hypertemporal_1
+	}
+
+	on_build_cancel = {
+		remove_global_flag = restoring_hypertemporal_1
+	}
+
+	on_build_complete = {
+		from = { 
+			if = {
+				limit = { NOT = { has_country_flag = restored_hypertemporal } }
+				set_country_flag = restored_hypertemporal
+				country_event = { id = atradai_kilinea.1000 }
+			}
+		}
+	}
+}

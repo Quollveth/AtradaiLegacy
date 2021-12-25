@@ -1,0 +1,31 @@
+namespace = hypertemporal_dialogue
+
+#contacting AI after digsite
+country_event = {
+	id = hypertemporal_dialogue.1000
+	title = "hypertemporal_dialogue.1000.name"
+	desc = "hypertemporal_dialogue.1000.desc"
+	picture = GFX_evt_kilinea
+	show_sound = event_mystic_reveal
+	diplomatic = yes
+	location = event_target:real_kilinea_target
+	is_triggered_only = yes
+	
+	immediate = {
+		#do stuff
+	}
+	option = {
+		name = "hypertemporal_dialogue.1000.a"
+		response_text = "hypertemporal_dialogue.1000.a.response"
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_event_chain = atradai_fix_class_20 } }
+				begin_event_chain = { event_chain = atradai_fix_class_20 }
+				enable_special_project = {
+					name = ATRADAI_CLASS_20_PHYSICS_1
+					owner = root
+				}
+			}
+		}
+	}
+}
