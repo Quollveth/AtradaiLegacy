@@ -1,3 +1,5 @@
+@underground_vault_army_limit = 250
+
 atradai_temporal_anomaly_army = {
 	defensive = yes
 	damage = 100000
@@ -45,7 +47,7 @@ atradai_underground_vault_armies = {
 				NOT = {
 					 check_variable = {
 						which = "atra_underground_vault_soldier_count"
-						value = 250
+						value = @underground_vault_army_limit
 					}
 				}
 			}
