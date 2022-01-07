@@ -1,0 +1,168 @@
+entity = {
+	name = "atra_ndb_ring_entity"
+	pdxmesh = "mammalian_01_colossus_rings_mesh"
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	playback_rate = 0
+}
+
+entity = {
+	name = "atra_ndb_ring_thiccer_entity"
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 1 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { -1 0 0 } rotation = { 0 0 0 } }
+
+	attach = { "loc01" = "atra_ndb_ring_entity" }
+	attach = { "loc02" = "atra_ndb_ring_entity" }
+	attach = { "loc03" = "atra_ndb_ring_entity" }
+
+	scale = 1
+}
+
+entity = {
+	name = "atra_ndb_rings_entity"
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 0 0 } rotation = { 90 0 0 } }
+	locator = { name = "loc03" position = { 0 0 0 } rotation = { 0 0 90 } }
+
+	attach = { "loc01" = "atra_ndb_ring_thiccer_entity" }
+	attach = { "loc02" = "atra_ndb_ring_thiccer_entity" }
+	attach = { "loc03" = "atra_ndb_ring_thiccer_entity" }
+
+	scale = 5.2
+}
+
+entity = {
+	name = "atra_ndb_muzzle_nipple_entity"
+	cull_radius = 500
+
+	locator = { name = "loc101" position = { 0 3.5 -2 } rotation = { 180 180 0 } }
+	locator = { name = "loc102" position = { 0 3.5 2 } rotation = { 0 180 0 } }
+
+	attach = { "loc101" = "fungoid_01_orbital_station_refinery_section_entity" }
+	attach = { "loc102" = "fungoid_01_orbital_station_refinery_section_entity" }
+
+	scale = 0.3
+}
+
+entity = {
+	name = "atra_ndb_muzzle_cover_entity"
+	pdxmesh = "nemesis_01_ion_cannon_mesh"
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	playback_rate = 0
+}
+
+entity = {
+	name = "atra_ndb_muzzle_entity"
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 0 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc03" position = { 0 -2 -5 } rotation = { 0 0 0 } }
+
+	attach = { "loc01" = "atra_ndb_muzzle_cover_entity" }
+	attach = { "loc02" = "atra_ndb_muzzle_cover_entity" }
+	attach = { "loc03" = "atra_ndb_muzzle_nipple_entity" }
+
+	scale = 16
+}
+
+entity = {
+	name = "partial_dyson_1_entity"
+	pdxmesh = "dyson_sphere_part_1_mesh"
+		scale = 32
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum_partial" } }
+	}
+
+		meshsettings = {
+			name = "pCylinder26|pCylinderShape2"
+			index = 0
+			texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+			texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+			texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/dyson_sphere/dyson_sphere_01_construction_fadein.dds"
+	}
+}
+
+entity = {
+	name = "partial_dyson_2_entity"
+	pdxmesh = "dyson_sphere_part_4_mesh"
+	scale = 32
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 10
+		event = { time = 0 particle = "dyson_sphere_electricity_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "dyson_sphere_bass_hum" } }
+	}
+
+		meshsettings = {
+			name = "pCylinder15|pCylinderShape1"
+			index = 0
+			texture_diffuse = "mammalian_dyson_sphere_01_diffuse.dds"
+			texture_normal = "mammalian_dyson_sphere_01_normal.dds"
+			texture_specular = "mammalian_dyson_sphere_01_specular.dds"
+			shader = "PdxMeshShip"
+		}
+
+			 game_data = {
+		custom_texture = "gfx/models/ships/megastructures/dyson_sphere/dyson_sphere_01_construction_fadein.dds"
+	}
+}
+
+## HERE
+entity = {
+	cull_radius = 1000
+	name = "atradai_nicoll_dyson_1_entity"
+
+	locator = { name = "loc01" position = { 0 -150 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 -150 -200 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 -150 0 } rotation = { 90 0 90 } }
+
+	attach = { "loc03" = "partial_dyson_1_entity" }
+	attach = { "loc03" = "partial_dyson_2_entity" }
+
+}
+
+entity = {
+	cull_radius = 1000
+	name = "atradai_nicoll_dyson_2_entity"
+
+	locator = { name = "loc01" position = { 0 -150 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 -150 -200 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 -150 0 } rotation = { 90 0 90 } }
+
+	attach = { "loc01" = "atra_ndb_rings_entity" }
+	attach = { "loc03" = "partial_dyson_1_entity" }
+	attach = { "loc03" = "partial_dyson_2_entity" }
+
+}
+
+entity = {
+	cull_radius = 1000
+	name = "atradai_nicoll_dyson_3_entity"
+
+	locator = { name = "loc01" position = { 0 -150 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 -150 -200 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 -150 0 } rotation = { 90 0 90 } }
+	locator = { name = "loc04" position = { 0 -150 -330 } rotation = { 0 0 0 } }
+
+	attach = { "loc01" = "atra_ndb_rings_entity" }
+	attach = { "loc03" = "partial_dyson_1_entity" }
+	attach = { "loc03" = "partial_dyson_2_entity" }
+	attach = { "loc02" = "atra_ndb_muzzle_entity" }
+	attach = { "loc04" = "invisible_turret_entity" }
+}

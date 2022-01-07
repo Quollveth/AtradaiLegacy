@@ -1,0 +1,8 @@
+tech_atradai_nicoll_dyson = {
+	cost = 350000
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_mega_engineering" "tech_dyson_sphere" }
+	weight = @tier5weight3
+}

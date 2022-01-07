@@ -1,0 +1,50 @@
+atra_invisible_small_fixed = {
+    size = small
+	is_fixed = yes
+    component = weapon
+    entities = {
+        weapon_type_kinetic = "invisible_turret_entity"
+        weapon_type_energy = "invisible_turret_entity"
+        weapon_type_explosive = "invisible_turret_entity"
+    }
+}
+atra_invisible_medium_fixed = {
+    size = medium
+	is_fixed = yes
+    component = weapon
+    entities = {
+        weapon_type_kinetic = "invisible_turret_entity"
+        weapon_type_energy = "invisible_turret_entity"
+        weapon_type_explosive = "invisible_turret_entity"
+    }
+}
+atra_invisible_large_fixed = {
+    size = large
+	is_fixed = yes
+    component = weapon
+    entities = {
+        weapon_type_kinetic = "invisible_turret_entity"
+        weapon_type_energy = "invisible_turret_entity"
+        weapon_type_explosive = "invisible_turret_entity"
+    }
+}
+atra_invisible_extra_fixed = {
+    size = extra_large
+	is_fixed = yes
+    component = weapon
+    entities = {
+        weapon_type_kinetic = "invisible_turret_entity"
+        weapon_type_energy = "invisible_turret_entity"
+        weapon_type_explosive = "invisible_turret_entity"
+    }
+}
+atra_invisible_titanic_fixed = {
+    size = titanic
+	is_fixed = yes
+    component = weapon
+    entities = {
+        weapon_type_kinetic = "invisible_turret_entity"
+        weapon_type_energy = "invisible_turret_entity"
+        weapon_type_explosive = "invisible_turret_entity"
+    }
+}

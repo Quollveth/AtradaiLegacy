@@ -1,0 +1,39 @@
+utility_component_template = {
+	key = "ATRADAI_NDB_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_planet"
+	icon_frame = 1
+	power = 2000000
+	component_set = "power_core"
+	size_restriction = { atradai_nicoll_dyson }
+}
+
+weapon_component_template = {
+	key = "ATRADAI_NDB_MAIN"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_world_cracker"
+	icon_frame = 1
+	power = -1500000
+	component_set = "ATRADAI_NDB_MAIN"
+	projectile_gfx = "atra_nicoll_dyson"
+	tags = { weapon_type_energy }
+	size_restriction = { atradai_nicoll_dyson }
+	ai_tags = { weapon_role_artillery }
+	ai_tag_weight = 0
+
+	firing_arc = 10
+	min_range = 10.0
+	use_ship_kill_target = yes
+
+	damage = { min = 2500000 max = 2500000 }
+	windup = { min = 145 max = 150 }
+	range = 5000
+	tracking = 10
+	accuracy = 10
+	total_fire_time = 100
+	shield_damage = 100
+	armor_damage = 100
+	hull_damage = 100
+}

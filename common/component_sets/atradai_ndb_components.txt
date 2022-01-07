@@ -1,0 +1,1 @@
+component_set = { key = "ATRADAI_NDB_MAIN"		icon = "GFX_ship_part_NDB_main"		icon_frame = 1 }
