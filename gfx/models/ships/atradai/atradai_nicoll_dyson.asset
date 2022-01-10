@@ -158,11 +158,10 @@ entity = {
 	locator = { name = "loc01" position = { 0 -150 0 } rotation = { 0 0 0 } }
 	locator = { name = "loc02" position = { 0 -150 -200 } rotation = { 0 0 0 } }
 	locator = { name = "loc03" position = { 0 -150 0 } rotation = { 90 0 90 } }
-	locator = { name = "loc04" position = { 0 -150 -330 } rotation = { 0 0 0 } }
+	locator = { name = "loc04" position = { 0 -150 -300 } rotation = { 0 0 0 } }
 
 	attach = { "loc01" = "atra_ndb_rings_entity" }
 	attach = { "loc03" = "partial_dyson_1_entity" }
 	attach = { "loc03" = "partial_dyson_2_entity" }
 	attach = { "loc02" = "atra_ndb_muzzle_entity" }
-	attach = { "loc04" = "invisible_turret_entity" }
 }

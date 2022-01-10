@@ -107,7 +107,7 @@ atradai_nicoll_dyson_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
+			alloys = 15000
 		}
 		upkeep = {
 			energy = 400
@@ -139,7 +139,7 @@ atradai_nicoll_dyson_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
+			alloys = 15000
 		}
 		upkeep = {
 			energy = 400
@@ -171,7 +171,7 @@ atradai_nicoll_dyson_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 5000
+			alloys = 15000
 		}
 		upkeep = {
 			energy = 400
