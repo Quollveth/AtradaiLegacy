@@ -2,15 +2,15 @@
 
 ##Origin stuff:
 origin_shellworld:0 "Shellworld"
-origin_shellworld_desc:0 "Starts on a extremely advanced shellworld built around a black hole \n §REXTREMELY UNBALANCED ORIGIN§!"
-START_SCREEN_SHELLWORLD:0 "§RBalance? Hardly know er!§! \n Spoilers: this origin is aboslutely §SNOT§! balanced. This planet is meant to be a endgame reward and not buildable at all. I have literally zero idea on how to balance it, but i am open for suggestions."
-origin_tooltip_shellworld:0 "The shellworld can produce almost all resources and is capable of expanding as you get more pops, it also receives powerful buffs and you start with more pops"
+origin_shellworld_desc:0 "Starts on the ruins of a extremely advanced shellworld built around a black hole. The Shellworld is powerful but starts destroyed and needs to be repaired. \n §RREBALANCED, STILL BROKEN§!"
+START_SCREEN_SHELLWORLD:0 "For as far as records go our civilization has always existed in this structure, it's unclear whether or not we built it or where brought here by it's builders, or even evolved in it's derelict expanses from the start, all we know is this has always been our home, and our home is falling apart after countless eons of abandonment"
+origin_tooltip_shellworld:0 "Start on a ruined shellworld, once fully repaired the shellworld is a advanced habitable megastructure capable of producing all resources and receives powerfull buffs"
 
 ##Events: 
-atradai_colleda.5010.name: "Shellworld mechanics"
-atradai_colleda.5010.desc: "The shellworld is a massive construct encircling a black hole composed of multiple layers forming the shell. The structure is capable of being completely self sufficient. \n \n The Shellworld expands as you move more pops into it gaining 5 new district slots every 100 pops. But the Shellworld is not capable of infinite expansion and will cap at 30 new districts (3000 pops)"
-atradai_colleda.5010.a: "Show this screen again"
-atradai_colleda.5010.b: "Got it"
+atradai_colleda.5010.name:0 "Shellworld mechanics"
+atradai_colleda.5010.desc:0 "The shellworld is a massive construct encircling a black hole composed of multiple layers forming the shell. The structure is capable of being completely self sufficient. \n \n The Shellworld expands as you move more pops into it gaining 5 new district slots every 100 pops. But the Shellworld is not capable of infinite expansion and will cap at 3000 pops, more pops can still live on it but no new districts will be added."
+atradai_colleda.5010.a:0 "Show this screen again"
+atradai_colleda.5010.b:0 "Got it"
 
 atradai_colleda.5000.name:0 "Shellworld Construction"
 atradai_colleda.5000.desc:0 "The construction of a shellworld has begun. \n §HKeep in mind this megastructure is not meant to be buildable and does not have models for the stages, the final shellworld will appear once finished"
@@ -21,10 +21,17 @@ atradai_colleda.5001.desc:0 "Another stage of the shellworld has been constructe
 atradai_colleda.5002.name:0 "Shellworld constructed"
 atradai_colleda.5002.desc:0 "We have finished the construction of a shellworld"
 
+atradai_colleda.5103.name:0 "Shellworld Repaired"
+atradai_colleda.5103.desc:0 "After countless eons of ruin the massive Shellworld has finally been repaired to it's old glory, expansion to the inner layers is beggining and the automated systems are at full power"
+atradai_colleda.5103.a:0 "At last, restored."
+
 ##Shellworld planet:
 
 pc_colleda:0 "Shellworld"
-pc_colleda_desc:0 "A extremely advanced habitat buitl around a black hole"
+pc_colleda_desc:0 "A extremely advanced habitat built around a black hole"
+
+pc_colleda_shattered:0 "Destroyed Shellworld"
+pc_colleda_shattered_desc:0 "The ruins of a extremely advanced habitat built around a black hole"
 
 #Buildings:
 colleda_layer_management_center:0 "Shellworld layer management centre"
@@ -80,6 +87,8 @@ colleda_science_desc:0 "Laboratories completely fill these layers dedicated to R
 colleda_paperwork:0 "Bureaucratic Arrays"
 colleda_paperwork_desc:0 "Offices fill these layers to make sure the massive bureaucracy needed for the shellworld is always in order"
 
+colleda_arcology:0 "Industrial Arcologies"
+colleda_arcology_desc:0 "Massive general purpose factories fill these layers of the shellworld providing all types of processed goods, be for military or civillian use"
 
 #Modifiers:
 d_atra_ruined_colleda:0 "Ruined shellworld"
@@ -88,6 +97,18 @@ d_atra_colleda_job_manager:0 "Shellworld management center"
 d_atra_colleda_job_manager_desc:0 "With such a massive planet and such a little population we cannot afford to be picky with so much work to be done"
 atradai_colleda_buff:0 "Shellwolrd"
 atradai_colleda_buff_desc:0 "The advanced automation systems in this shellworld greatly increase efficiency"
+
+d_colleda_ruins_1:0 "Ruined Automated Systems"
+d_colleda_ruins_2:0 "Ruined Matter synthesiser"
+d_colleda_ruins_3:0 "Ruined Penrose Nodes"
+d_colleda_ruins_4:0 "Ruined Life Support Arrays"
+d_colleda_ruins_5:0 "Ruined Layer Management Nodes"
+
+d_colleda_ruins_1_desc:0 "Repairing the shellworld is a monumental task, but we have to start somewhere"
+d_colleda_ruins_2_desc:0 "Repairing the shellworld is a monumental task, but we have to start somewhere"
+d_colleda_ruins_3_desc:0 "Repairing the shellworld is a monumental task, but we have to start somewhere"
+d_colleda_ruins_4_desc:0 "Repairing the shellworld is a monumental task, but we have to start somewhere"
+d_colleda_ruins_5_desc:0 "Repairing the shellworld is a monumental task, but we have to start somewhere"
 
 #Megastructure
 atradai_shellworld_site:0 "Shellworld Construction Site"
@@ -109,5 +130,23 @@ atradai_shellworld_3_DESC:0 "A shellworld is being constructed here"
 atradai_shellworld_4:0 "Finished Shellworld"
 atradai_shellworld_4_DESC:0 "A full shellworld"
 
+#Techs
 tech_atradai_shellworld:0 "Shellworld construction"
 tech_atradai_shellworld_desc:0 "Allows us to build our own shellworlds around black hole"
+
+#Decisions
+dec_atra_repair_colleda:0 "Repair Shellworld"
+dec_atra_repair_colleda_desc:0 "Begins repairs of the shellworld"
+
+REQUIRE_REPAIRED_MODIFIER:0 "We need to fully repair the shellworld systems before starting this monumental task"
+
+REPAIR_SHELLWORLD_DECISION_EFFECTS:0 "Repairing the shellworld is a monumental task, but once finished it shall be returned to it's true glory"
+
+dec_atra_specialized:0 "Revert Industry Specialization"
+COLLEDA_NO_INDUSTRY_DISTRICT:0 "We cannot have any industrial districts built"
+COLLEDA_INDUSTRY_SPECIALIZED_EFFECT:0 "We can merge the shellworld industrial arrays into general purpose industries \n HDoing so will merge foundry and industrial districts into arcology districts!"
+
+dec_atra_specialized_undo:0 "Specialize Shellworld Industry"
+COLLEDA_NO_ARCOLOGY_DISTRICT:0 "We cannot have any industrial districts built"
+COLLEDA_INDUSTRY_SPECIALIZED_UNDO_EFFECT:0 "We can specialize the industry of the shellworld to focus on civillian or military uses. \n HDoing so will split arcology districts into foundry and industry districts!"
+

@@ -3,6 +3,7 @@
 
 
 @colleda_universal_job_count = 20
+@colleda_half_job_count = 10
 @colleda_refinery_job_count = 6
 
 @colleda_district_cost_min = 1200
@@ -438,6 +439,141 @@ colleda_farms = {
 
 ### Advanced Resources ###
 
+# Merged industry
+colleda_arcology = {
+	base_buildtime = @colleda_district_build_time
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = { 
+		exists = from
+		uses_district_set = colleda_districts 
+	}	
+
+	potential = {
+		uses_district_set = colleda_districts
+		has_planet_flag = colleda_not_specialized_industry
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @colleda_district_cost_min
+			volatile_motes = @colleda_district_cost_sr
+		}
+		upkeep = {
+			energy = @colleda_district_upkeep_ec
+			volatile_motes = @colleda_district_upkeep_sr
+		}
+	}
+
+	planet_modifier = {
+		planet_metallurgists_alloys_produces_mult = @colleda_district_production_mult
+		planet_artisans_produces_mult = @colleda_district_production_mult
+		planet_housing_add = @colleda_half_job_count
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_foundry_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_technician_add = @colleda_half_job_count
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_artisan_drone_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_crafter_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = @colleda_half_job_count
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+				is_crafter_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = @colleda_half_job_count
+		}
+	}
+}
+
 # Alloys
 colleda_factory = {
 	base_buildtime = @colleda_district_build_time
@@ -450,6 +586,7 @@ colleda_factory = {
 
 	potential = {
 		uses_district_set = colleda_districts
+		NOT = { has_planet_flag = colleda_not_specialized_industry }
 	}
 
 	resources = {
@@ -547,6 +684,7 @@ colleda_industry = {
 
 	potential = {
 		uses_district_set = colleda_districts
+		NOT = { has_planet_flag = colleda_not_specialized_industry }
 	}
 
 	resources = {
@@ -572,7 +710,7 @@ colleda_industry = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_artisan_drone_add = 6
+			job_artisan_drone_add = @colleda_universal_job_count
 		}
 	}
 
@@ -585,7 +723,7 @@ colleda_industry = {
 			}
 		}
 		modifier = {
-			job_artisan_add = 6
+			job_artisan_add = @colleda_universal_job_count
 		}
 	}
 
@@ -598,7 +736,7 @@ colleda_industry = {
 			}
 		}
 		modifier = {
-			job_artificer_add = 6
+			job_artificer_add = @colleda_universal_job_count
 		}
 	}
 }
