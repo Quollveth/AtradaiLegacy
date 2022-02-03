@@ -1,3 +1,5 @@
+#### FULL
+
 entity = {
 	name = "atra_ndb_ring_entity"
 	pdxmesh = "mammalian_01_colossus_rings_mesh"
@@ -123,7 +125,7 @@ entity = {
 	}
 }
 
-## HERE
+## MEGASTRUCTURE STAGES
 entity = {
 	cull_radius = 1000
 	name = "atradai_nicoll_dyson_1_entity"
@@ -164,4 +166,102 @@ entity = {
 	attach = { "loc03" = "partial_dyson_1_entity" }
 	attach = { "loc03" = "partial_dyson_2_entity" }
 	attach = { "loc02" = "atra_ndb_muzzle_entity" }
+}
+
+
+#### DESTROYED
+
+entity = {
+	name = "atra_ndb_half_ring_base_entity"
+	pdxmesh = "mammalian_colossus_rings_half_mesh"
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	playback_rate = 0
+}
+
+entity = {
+	name = "half_ring_thingies_entity"
+	locator = { name = "loc01" position = { 0 0 0 } }
+	attach = { "loc01" = "reptilian_01_transport_ship_entity" }
+	scale = 0.3
+}
+
+entity = {
+	name = "half_ring_thingies_stack_entity"
+	locator = { name = "loc01" position = { 1 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { -1 0 0 } rotation = { 0 0 0 } }
+
+	attach = { "loc01" = "half_ring_thingies_entity" }
+	attach = { "loc02" = "half_ring_thingies_entity" }
+
+}
+
+entity = {
+	name = "atra_ndb_half_ring_entity"
+
+	locator = { name = "loc01" position = { 0 0 0 } }
+	locator = { name = "loc02" position = { -2 38 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc03" position = { -2 -38 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc04" position = { 2 38 0 } rotation = { 0 0 90 } }
+	locator = { name = "loc05" position = { 2 -38 0 } rotation = { 0 0 90 } }
+
+	attach = { "loc01" = "atra_ndb_half_ring_base_entity" }
+	attach = { "loc02" = "half_ring_thingies_stack_entity" }
+	attach = { "loc03" = "half_ring_thingies_stack_entity" }
+	attach = { "loc04" = "half_ring_thingies_stack_entity" }
+	attach = { "loc05" = "half_ring_thingies_stack_entity" }
+
+}
+
+entity = {
+	name = "atra_ndb_broken_half_ring_thiccer_entity"
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 1 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { -1 0 0 } rotation = { 0 0 0 } }
+
+	attach = { "loc01" = "atra_ndb_half_ring_entity" }
+	attach = { "loc02" = "atra_ndb_half_ring_entity" }
+	attach = { "loc03" = "atra_ndb_half_ring_entity" }
+
+	scale = 1
+}
+
+entity = {
+	name = "atra_ndb_broken_all_rings_entity"
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } } #ring 1
+	locator = { name = "loc02" position = { 0 0 -15 } rotation = { 150 0 0 } } #ring 1
+	locator = { name = "loc03" position = { 0 15 20 } rotation = { 35 0 90 } } #ring 2
+	locator = { name = "loc04" position = { 0 0 0 } rotation = { 0 -180 90 } } #ring 2
+	locator = { name = "loc05" position = { 15 0 0 } rotation = { 90 0 0 } } #ring 3
+	locator = { name = "loc06" position = { -15 0 -15 } rotation = { 250 0 0 } } #ring 3
+
+	attach = { "loc01" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 1
+	attach = { "loc02" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 1
+	attach = { "loc03" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 2
+	attach = { "loc04" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 2
+	attach = { "loc05" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 3
+	attach = { "loc06" = "atra_ndb_broken_half_ring_thiccer_entity" } #ring 3
+
+	scale = 5.2
+}
+
+## MEGASTRUCTURE
+entity = {
+	name = atradai_nicoll_dyson_broken_entity
+	cull_radius = 5000
+	locator = { name = "loc01" position = { 0 -150 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 -150 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc04" position = { 320 -120 80 } rotation = { -45 -90 0 } }
+
+	attach = { "loc01" = "atra_ndb_broken_all_rings_entity" }
+	attach = { "loc02" = "atradai_nicoll_dyson_1_entity" }
+	attach = { "loc03" = "atra_ndb_broken_muzzle" }
+	attach = { "loc04" = "atra_ndb_muzzle_entity" }
+
+	scale = 1
 }

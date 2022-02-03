@@ -55,6 +55,7 @@ atradai_nicoll_dyson_0 = {
 			custom_tooltip = {
 				fail_text = "must_build_around_star"
 				is_star = yes
+				NOT = { is_planet_class = pc_t_star }
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
@@ -91,13 +92,16 @@ atradai_nicoll_dyson_0 = {
 
 	on_build_complete = {
 		set_star_flag = atradai_NDB
+		country_event = {
+			id = atra_ndb.100
+		}
 	}
 }
 
 atradai_nicoll_dyson_1 = {
 	entity = "atradai_nicoll_dyson_1_entity"
 	construction_entity = "atradai_nicoll_dyson_1_entity"
-	portrait = "GFX_evt_atradai_ndb"
+	portrait = "GFX_megastructure_construction_background"
 	upgrade_from = {
 		atradai_nicoll_dyson_0
 	}
@@ -129,7 +133,7 @@ atradai_nicoll_dyson_1 = {
 atradai_nicoll_dyson_2 = {
 	entity = "atradai_nicoll_dyson_2_entity"
 	construction_entity = "atradai_nicoll_dyson_2_entity"
-	portrait = "GFX_evt_atradai_ndb"
+	portrait = "GFX_megastructure_construction_background"
 	upgrade_from = {
 		atradai_nicoll_dyson_1
 	}
@@ -159,9 +163,9 @@ atradai_nicoll_dyson_2 = {
 }
 
 atradai_nicoll_dyson_3 = {
-	entity = "atradai_nicoll_dyson_3_entity"
+	entity = ""
 	construction_entity = "atradai_nicoll_dyson_3_entity"
-	portrait = "GFX_evt_atradai_ndb"
+	portrait = "GFX_megastructure_construction_background"
 	upgrade_from = {
 		atradai_nicoll_dyson_2
 	}
@@ -182,7 +186,13 @@ atradai_nicoll_dyson_3 = {
 		factor = 10
 	}
 	on_build_complete = {
-		fromfrom.planet = { save_event_target_as = ndb_planet }
+		fromfrom.planet = { 
+			save_event_target_as = ndb_planet 
+			set_planet_flag = has_ndb
+			solar_system = {
+				atra_assign_ndb_ids = yes
+			}
+		}
 		create_fleet = { 
 			name = "Nicoll Dyson Beam" 
 			settings = { spawn_debris = no } 
@@ -198,6 +208,10 @@ atradai_nicoll_dyson_3 = {
 					distance = 0.1
 					angle = 0
 				}
+				set_variable = {
+					which = atra_ndb_ship_id
+					value = ROOT.fromfrom.planet.atra_ndb_id
+				}
 			}
 		}
 		if = {
@@ -205,15 +219,20 @@ atradai_nicoll_dyson_3 = {
 			fromfrom.planet = { remove_planet_flag = just_repaired_ndb }
 		}
 		else = {
-			country_event = { id = atra_ndb.103 }
+			from = { country_event = { id = atra_ndb.103 } }
 		}
-		remove_megastructure = fromfrom
+		fromfrom = {
+			set_variable = {
+				which = atra_ndb_mega_id
+				value = ROOT.fromfrom.planet.atra_ndb_id
+			}
+		}
 	}
 }
 
 atradai_nicoll_dyson_ruined = {
-	entity = "atradai_nicoll_dyson_ruined_entity"
-	portrait = "GFX_evt_atradai_ndb"
+	entity = "atradai_nicoll_dyson_broken_entity"
+	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	potential = { always = no }
 	possible = { always = no }
@@ -221,7 +240,7 @@ atradai_nicoll_dyson_ruined = {
 atradai_nicoll_dyson_repaired = {
 	entity = "atradai_nicoll_dyson_2_entity"
 	construction_entity = "atradai_nicoll_dyson_2_entity"
-	portrait = "GFX_evt_atradai_ndb"
+	portrait = "GFX_megastructure_construction_background"
 	upgrade_from = {
 		atradai_nicoll_dyson_ruined
 	}
@@ -238,6 +257,7 @@ atradai_nicoll_dyson_repaired = {
 		factor = 10
 	}
 	on_build_complete = {
+		clear_all_system_debris = yes
 		fromfrom.planet = {
 			set_planet_flag = just_repaired_ndb
 		}

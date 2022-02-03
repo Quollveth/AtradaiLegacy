@@ -1,7 +1,7 @@
 utility_component_template = {
 	key = "ATRADAI_NDB_REACTOR"
 	size = small
-	icon = "GFX_ship_part_reactor_planet"
+	icon = "GFX_ship_part_ndb_reactor"
 	icon_frame = 1
 	power = 2000000
 	component_set = "power_core"
@@ -28,7 +28,7 @@ weapon_component_template = {
 	use_ship_kill_target = yes
 
 	damage = 250000000
-	windup = 350
+	windup = 1000
 	total_fire_time = 1500
 	range = 5000
 	tracking = 10
