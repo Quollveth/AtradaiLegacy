@@ -1,14 +1,14 @@
 ##Hypertemporal shifter
 
 atradai_hypertemporal_ruined = {
-	entity = "hypertemporal_full_entity"
+	entity = "hypertemporal_full_broken_entity"
 	portrait = "GFX_megastructure_construction_background"
 	potential = { always = no }
 }
 
 atradai_hypertemporal_repair_1 = {
 	entity = "hypertemporal_full_entity"
-	construction_entity = "neutronium_gigaforge_1_construction_entity"
+	construction_entity = "hypertemporal_full_entity"
 	portrait = "GFX_megastructure_construction_background"
 	upgrade_from = { atradai_hypertemporal_ruined }
 
@@ -16,22 +16,21 @@ atradai_hypertemporal_repair_1 = {
 	resources = {
 		category = megastructures
 		cost = { 
-			alloys = 15000 #15k
-			energy = 3500
+			alloys = 5000 #5k
+			energy = 1000
 			minor_artifacts = 15
 		}
 		produces = {
-			energy = 1000
-			physics_research = 300
-			society_research = 300
-			engineering_research = 300
+			energy = 500
+			physics_research = 50
+			society_research = 50
+			engineering_research = 50
 		}
 	}
 	
 	possible = { 
 		from = { 
-			has_technology = tech_atradai_hypertemporal_repair_1 
-			has_technology = tech_mega_engineering
+			has_technology = tech_atradai_hypertemporal_repair_1
 		}
 		custom_tooltip = {
 			fail_text = "hypertemporal_one_per_galaxy"
