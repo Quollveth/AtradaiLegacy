@@ -5,27 +5,72 @@ country_event = {
 	id = hypertemporal_dialogue.1000
 	title = "hypertemporal_dialogue.1000.name"
 	desc = "hypertemporal_dialogue.1000.desc"
-	picture = GFX_evt_kilinea
-	show_sound = event_mystic_reveal
 	diplomatic = yes
 	location = event_target:real_kilinea_target
 	is_triggered_only = yes
 	
-	immediate = {
-		#do stuff
-	}
-	option = {
+	option = { #gives the project
 		name = "hypertemporal_dialogue.1000.a"
-		response_text = "hypertemporal_dialogue.1000.a.response"
+		allow = { NOT = { has_country_flag = repairing_hypertemporal } }
+		hidden_effect = {
+			country_event = { id = hypertemporal_dialogue.1001 }
+		}
+	}
+	option = { #what is the megastructure
+		name = "hypertemporal_dialogue.1000.b"
+		hidden_effect = {
+			country_event = { id = hypertemporal_dialogue.1002 }
+		}
+	}
+	option = { #who are you
+		name = "hypertemporal_dialogue.1000.c"
+		hidden_effect = {
+			country_event = { id = hypertemporal_dialogue.1003 }
+		}
+	}
+	option = { #what is this place
+		name = "hypertemporal_dialogue.1000.d"
+		hidden_effect = {
+			country_event = { id = hypertemporal_dialogue.1004 }
+		}
+	}
+	option = { #leave
+		name = "hypertemporal_dialogue.1000.e"
+	}
+}
+
+#gives the project
+country_event = {
+	id = hypertemporal_dialogue.1001
+	title = "hypertemporal_dialogue.1001.name"
+	desc = "hypertemporal_dialogue.1001.desc"
+	diplomatic = yes
+	location = event_target:real_kilinea_target
+	is_triggered_only = yes
+
+	option = {
+		name = "hypertemporal_dialogue.1001.a"
+		response_text = "hypertemporal_dialogue.1001.a.response"
 		hidden_effect = {
 			if = {
-				limit = { NOT = { has_event_chain = atradai_fix_class_20 } }
-				begin_event_chain = { event_chain = atradai_fix_class_20 }
+				limit = { NOT = { has_event_chain = atradai_fix_hypertemporal } }
+				begin_event_chain = { event_chain = atradai_fix_hypertemporal }
 				enable_special_project = {
-					name = ATRADAI_CLASS_20_PHYSICS_1
+					name = ATRADAI_HYPERTEMPORAL_PHYSICS_1
 					owner = root
 				}
+				set_country_flag = repairing_hypertemporal
 			}
 		}
 	}
+}
+
+#flavor
+country_event = {
+	id = hypertemporal_dialogue.1002
+	title = "hypertemporal_dialogue.1002.name"
+	desc = "hypertemporal_dialogue.1002.desc"
+	diplomatic = yes
+	location = event_target:real_kilinea_target
+	is_triggered_only = yes
 }

@@ -152,7 +152,7 @@ setup_first_atradai_primitives = {
 
 create_temporal_anomaly_armies = {
 	while = { 
-		count = 3	
+		count = 5	
 		create_army = { 
 			name = "Temporal Anomaly"	
 			owner = event_target:atradai_country_1

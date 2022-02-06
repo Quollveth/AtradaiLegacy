@@ -69,12 +69,11 @@ country_event = {
 	id = atradai_kilinea.1000
 	title = atradai_kilinea.1000.name
 	desc = atradai_kilinea.1000.desc
-	picture = GFX_evt_atradai_hypertemporal
+	picture = GFX_evt_atradai_time_shift
 	show_sound = event_mysterious_signal
 	is_triggered_only = yes
 	location = from
 	immediate = {
-		log = "event kilinea 1000 is working"
 		from = {
 			system_event = { id = atradai_kilinea.1001 }
 		}

@@ -1,0 +1,29 @@
+# First Primitives
+first_atradai_observation = {
+	icon = "GFX_fleet_task_passive_observation"
+	small_icon = 1
+
+	resources = {
+		category = station_observer_missions
+		produces = {
+			physics_research = 150
+			society_research = 15
+			engineering_research = 5
+		}
+	}
+
+	#monthly_progress = 0.05 #20 months to finish
+	monthly_progress = 1
+	completion_event = atradai_observation.1000
+
+	potential = {
+		FROM = {
+			exists = owner
+			owner = { has_country_flag = first_atradai_age }
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}

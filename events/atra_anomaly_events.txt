@@ -1,6 +1,5 @@
 namespace = atradai_anomaly
 
-
 #Underground vault
 ship_event = {
 	id = atradai_anomaly.5000

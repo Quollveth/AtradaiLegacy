@@ -101,26 +101,3 @@ country_event = {
 		}
 	}
 }
-
-planet_event = {
-	id = atradai_colleda.5102
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { is_planet_class = pc_colleda }
-	immediate = {
-		owner = {
-			country_event = {
-				id = atradai_colleda.5103
-			}
-		}
-	}
-}
-
-country_event = {
-	id = atradai_colleda.5103
-	title = atradai_colleda.5103.name
-	desc = atradai_colleda.5103.desc
-	picture = GFX_evt_city_planet
-	is_triggered_only = yes
-	option = { name = atradai_colleda.5103.a }
-}

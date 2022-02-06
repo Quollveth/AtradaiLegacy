@@ -1,0 +1,41 @@
+namespace = atradai_colleda
+
+#sets up first primitive colleda
+planet_event = {
+	id = atradai_colleda.100
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		add_modifier = {
+			modifier = atradai_temporal_shift
+			days = -1
+		}
+		add_modifier = {
+			modifier = atradai_perfect_environment
+			days = -1
+		}
+		atradai_add_gaia_features = yes
+		atradai_add_gaia_features = yes #why add every planetary feature once when you can add them twice?
+		#modifiers and features are added here instead of the scripted effects since those can run multiple times
+
+		generate_first_atradai_primitives = yes
+		setup_first_atradai_primitives = yes
+	}
+}
+
+#on_ground_combat_started on_action
+# This = planet
+# From = country attacking
+planet_event = {
+	id = atradai_colleda.105
+	is_triggered_only = yes
+	trigger = {
+		this = { has_planet_flag = primitive_colleda }
+	}
+	immediate = {
+		every_ground_combat_attacker = {
+			remove_army = yes
+		}
+	}
+}
+

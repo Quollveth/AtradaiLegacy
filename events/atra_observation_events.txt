@@ -1,0 +1,71 @@
+namespace = atradai_observation
+
+#finished first study
+country_event = {
+	id = atradai_observation.1000
+	title = atradai_observation.1000.title
+	desc = atradai_observation.1000.desc
+	picture = GFX_colony_type_primitive
+	show_sound = event_laboratory_sound
+	location = FROMFROM
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = atradai_first_study
+		#do stuff
+	}
+
+	option = {
+		name = atradai_observation.1000.a
+	}
+
+}
+
+
+
+## FLAVOR EVENTS
+
+#temporal shift {hidden}
+planet_event = {
+	id = atradai_observation.10
+	hide_window = yes
+
+	trigger = {
+		has_observation_outpost = yes
+		observation_outpost = { has_mission = first_atradai_observation }
+		observation_outpost_owner = {
+			is_ai = no
+		}
+		owner = {
+			is_country_type = primitive
+			has_country_flag = first_atradai_age
+		}
+		NOT = { has_planet_flag = temporal_shift_happened }
+	}
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	immediate = {
+		observation_outpost_owner = {
+			country_event = { id = atradai_observation.11 }
+		}
+		set_planet_flag = temporal_shift_happened
+	}
+}
+country_event = {
+	id = atradai_observation.11
+	title = atradai_observation.11.title
+	desc = atradai_observation.11.desc
+	picture = GFX_evt_atradai_time_shift
+	show_sound = event_mysterious_signal
+	is_triggered_only = yes
+	location = from
+	option = {
+		name = atradai_observation.11.a
+		add_resource = {
+			physics_research = 1000
+		}
+	}
+}

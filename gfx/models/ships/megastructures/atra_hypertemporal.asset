@@ -130,7 +130,7 @@ entity = {
 	name = "hypertemporal_center_ring_entity"
 	cull_radius = 500
 
-	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 15 0 0 } }
 	locator = { name = "loc102" position = { 0 0 0 } rotation = { 0 0 40 } }
 	locator = { name = "loc103" position = { 0 0 0 } rotation = { 0 0 -40 } }
 
@@ -233,6 +233,7 @@ entity = {
 	
 	default_state = "idle"
 	state = { name = "idle" animation = "idle" animation_speed = 0.7 }
+	scale = 0.9
 }
 
 entity = {
@@ -271,7 +272,7 @@ entity = {
 	name = "hypertemporal_connector_ring_entity"
 	cull_radius = 500
 
-	locator = { name = "loc101" position = { 0 0 0 } rotation = { -15 0 90 } }
+	locator = { name = "loc101" position = { 0 0 0 } rotation = { 0 0 90 } }
 
 	attach = { "loc101" = "hypertemporal_connector_six_entity" }
 
@@ -285,9 +286,13 @@ entity = {
 	name = hypertemporal_ringworld_entity
 	cull_radius = 500
 
-	locator = { name = "root" postition = { 0 0 0 } rotation = { 0 0 0 } }
-	attach = { "root" = "qvt_kitbasher_ringworld" }
-	attach = { "root" = "hypertemporal_connector_ring_entity" }
+	locator = { name = "loc01" postition = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" postition = { 0 10 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" postition = { 0 -10 0 } rotation = { 0 0 0 } }
+	attach = { "loc01" = "qvt_kitbasher_ringworld_tech" }
+	attach = { "loc02" = "qvt_kitbasher_ringworld_tech" }
+	attach = { "loc03" = "qvt_kitbasher_ringworld_tech" }
+	attach = { "loc01" = "hypertemporal_connector_ring_entity" }
 
 	scale = 0.9
 }
@@ -300,10 +305,11 @@ entity = {
 		size = 2500
 	}
 
-	locator = { name = "root" position = { 0 0 0 } }
-	attach = { "root" = "hypertemporal_ringworld_entity" }
-	attach = { "root" = "hypertemporal_center_ring_entity" }
-	attach = { "root" = "hypertemporal_support_beam_entity" }
+	locator = { name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc02" position = { 0 0 0 } rotation = { 15 0 0 } }
+	attach = { "loc01" = "hypertemporal_ringworld_entity" }
+	attach = { "loc01" = "hypertemporal_center_ring_entity" }
+	attach = { "loc02" = "hypertemporal_support_beam_entity" }
 
 	scale = 1
 }
