@@ -1,2 +1,0 @@
-on_fleet_disbanded = {						events = { atra_ndb.1001 } }
-on_fleet_destroyed_victim = {				events = { atra_ndb.1000 } }

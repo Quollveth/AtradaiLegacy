@@ -1,3 +1,0 @@
-on_game_start = {
-	events = { atradai_colleda.5100 }
-}
