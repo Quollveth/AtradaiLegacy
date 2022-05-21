@@ -1,0 +1,149 @@
+namespace = atra_situation
+
+country_event = {
+	id = atra_situation.100
+	desc = atra_situation.100_desc
+	picture = GFX_evt_hypertemporal_ruined
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_technology = tech_administrative_ai }
+			add_research_option = tech_self_aware_logic
+		} else = {
+			add_research_option = tech_administrative_ai
+		}
+		random_list = {
+			10 = {}
+			5 = {
+				if = {
+					limit = { has_technology = tech_robotic_workers }
+					add_research_option = tech_droid_workers
+				} else = {
+					add_research_option = tech_robotic_workers
+				}
+			}
+		}
+		add_resource = {
+			physics_research = 2000
+		}
+		random_list = {
+			10 = {}
+			5 = {
+				add_resource = {
+					minor_artifacts = 8
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = atra_situation.101
+	desc = atra_situation.101_desc
+	picture = GFX_evt_hypertemporal_ruined
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_technology = tech_starbase_3 }
+			add_research_option = tech_starbase_4
+		} else_if = {
+			limit = { has_technology = tech_starbase_2 }
+			add_research_option = tech_starbase_3
+		} else = {
+			add_research_option = tech_starbase_2
+		}
+		random_list = {
+			10 = {}
+			5 = {
+				if = {
+					limit = { has_technology = tech_destroyers }
+					add_research_option = tech_cruisers
+				} else = {
+					add_research_option = tech_destroyers
+				}
+			}
+		}
+		add_resource = {
+			engineering_research = 2000
+		}
+		random_list = {
+			10 = {}
+			5 = {
+				add_resource = {
+					minor_artifacts = 15
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+country_event = {
+	id = atra_situation.1000
+	desc = atra_situation.1000_desc
+	picture = GFX_evt_analyzing_artifacts
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			10 = {
+				add_resource = {
+					physics_research = 500
+					engineering_research = 500
+					society_research = 500
+				}
+			}
+			5 = {
+				add_resource = {
+					physics_research = 800
+					engineering_research = 800
+					society_research = 800
+				}
+			}
+			1 = {
+				add_resource = {
+					physics_research = 1000
+					engineering_research = 1000
+					society_research = 1000
+				}
+			}
+
+		}
+	}
+}
+country_event = {
+	id = atra_situation.1001
+	desc = atra_situation.1001_desc
+	picture = GFX_evt_analyzing_artifacts
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			10 = {
+				add_resource = {
+					alloys = 500
+					minerals = 1000
+					minor_artifacts = 3
+				}
+			}
+			5 = {
+				add_resource = {
+					alloys = 800
+					minerals = 1800
+					minor_artifacts = 5
+				}
+			}
+			1 = {
+				add_resource = {
+					alloys = 1000
+					minerals = 2100
+					minor_artifacts = 8
+				}
+			}
+		}
+	}
+}
+

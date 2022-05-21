@@ -1,42 +1,42 @@
 namespace = atradai_hypertemporal
 
-#finished first project
+#finished dig site
+country_event = {
+	id = atradai_hypertemporal.1000
+	title = "atradai_hypertemporal.1000.name"
+	desc = "atradai_hypertemporal.1000.desc"
+	picture = GFX_evt_hypertemporal_ruined
+	show_sound = event_celebration
+	is_triggered_only = yes
+
+	immediate = {
+		start_situation = {
+			type = atradai_first_mega_repair
+			target = fromfrom
+		}
+	}
+}
+
+
+#finished situation
 country_event = {
 	id = atradai_hypertemporal.1001
 	title = "atradai_hypertemporal.1001.name"
 	desc = "atradai_hypertemporal.1001.desc"
-	picture = GFX_evt_hypertemporal
+	picture = GFX_evt_hypertemporal_ruined
 	show_sound = event_celebration
 	is_triggered_only = yes
 
 	immediate = {
-		add_research_option = tech_atradai_hypertemporal_repair_1
-
-	}
-}
-
-#researched first repair tech
-country_event = {
-	id = atradai_hypertemporal.1002
-	title = "atradai_hypertemporal.1002.name"
-	desc = "atradai_hypertemporal.1002.desc"
-	picture = GFX_evt_hypertemporal
-	show_sound = event_celebration
-	is_triggered_only = yes
-	trigger = {
-		last_increased_tech = tech_atradai_hypertemporal_repair_1
-	}
-
-	immediate = {
-		#do stuff
+		give_technology = { tech = tech_atradai_hypertemporal_repair_1 message = yes }
 	}
 }
 
 #repaired first stage
 country_event = {
-	id = atradai_hypertemporal.1003
-	title = "atradai_hypertemporal.1003.name"
-	desc = "atradai_hypertemporal.1003.desc"
+	id = atradai_hypertemporal.1002
+	title = "atradai_hypertemporal.1002.name"
+	desc = "atradai_hypertemporal.1002.desc"
 	picture = GFX_evt_hypertemporal
 	show_sound = event_celebration
 	is_triggered_only = yes

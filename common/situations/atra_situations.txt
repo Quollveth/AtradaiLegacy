@@ -1,0 +1,159 @@
+## first mega repair
+atradai_first_mega_repair = {
+	picture = GFX_atra_hypertemporal_ruined
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_unknown
+
+	on_progress_complete = {
+		owner = { country_event = { id = atradai_hypertemporal.1001 } }
+	}
+
+	category = positive
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 25
+			custom_tooltip = atra_stage_advance
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 80
+			on_first_enter = {
+				situation_event = { id = atra_situation.100 }
+				switch = {
+					trigger = current_situation_approach
+					atra_first_repair_focused = {
+						add_resource = {
+							physics_research = 800
+						}
+					}
+					atra_first_repair_super_focused = {
+						add_resource = {
+							physics_research = 1200
+						}
+					}
+				}
+			}
+			custom_tooltip = atra_stage_advance
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+				situation_event = { id = atra_situation.101 }
+				switch = {
+					trigger = current_situation_approach
+					atra_first_repair_focused = {
+						add_resource = {
+							physics_research = 800
+						}
+					}
+					atra_first_repair_super_focused = {
+						add_resource = {
+							physics_research = 1200
+						}
+					}
+				}
+			}
+			custom_tooltip = atra_stage_advance
+		}
+	}
+
+	approach = {
+		name = atra_first_repair_nope
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_yellow
+	}
+
+	approach = {
+		name = atra_first_repair_normal
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 20
+				engineering_research = 10
+			}
+			produces = {
+				physics_research = 50
+			}
+		}
+	}
+
+	approach = {
+		name = atra_first_repair_focused
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 50
+				engineering_research = 50
+			}
+			produces = {
+				physics_research = 100
+			}
+		}
+	}
+
+	approach = {
+		name = atra_first_repair_super_focused
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		allow = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 80
+				engineering_research = 100
+			}
+			produces = {
+				physics_research = 200
+			}
+		}
+	}
+
+	on_monthly = {
+		random_events = {
+			150 = 0
+			10 = atra_situation.1000
+			5 = atra_situation.1001
+		}
+	}
+
+	monthly_progress = {
+		base = 010
+		modifier = {
+			add = 0.1
+			current_situation_approach = atra_first_repair_focused
+		}
+		modifier = {
+			add = 0.2
+			current_situation_approach = atra_first_repair_super_focused
+		}
+		modifier = {
+			multiply = 0
+			current_situation_approach = atra_first_repair_nope
+		}
+	}
+}

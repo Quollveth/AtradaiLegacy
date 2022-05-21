@@ -165,7 +165,7 @@ fleet_event = {
 		#do stuff
 	}
 }
-#Finds derelict AI
+#Starts situation
 fleet_event = {
 	id = atradai_colleda_site.011
 	title = "atradai_colleda_site.011.name"
@@ -178,11 +178,17 @@ fleet_event = {
 	option = {
 		name = atradai_colleda_site.011.a
 		owner = {
-			country_event = { id = hypertemporal_dialogue.1000 }
+			country_event = { id = atradai_hypertemporal.1000 }
 		}
 	}
 }
 
+
+
+
+
+
+### FLAVOR
 
 ##Underground vault site ##########################################################################
 fleet_event = {

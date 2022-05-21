@@ -58,6 +58,7 @@ ship_event = {
 		set_country_flag = surveyed_first_kilinea
 		from = {
 			create_archaeological_site = site_colleda_ruins
+			save_global_event_target_as = atra_real_kilinea
 		}
 	}
 	option = { name = "atradai_kilinea.101.a" }
