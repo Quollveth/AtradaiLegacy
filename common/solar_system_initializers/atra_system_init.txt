@@ -33,6 +33,7 @@ kliniea_destroyed_system = {
 				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
 				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
 				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+				set_planet_flag = atra_ruined_colleda
 			}
 		}
 
@@ -51,6 +52,7 @@ kliniea_destroyed_system = {
 				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
 				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
 				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+				set_planet_flag = atra_control
 			}
 		}
 	}
@@ -139,7 +141,7 @@ kliniea_destroyed_system = {
 
 	init_effect = {
 		spawn_megastructure = {
-			type = atradai_hypertemporal_ruined
+			type = atra_hypertemporal_ruined
 			orbit_angle = 0
 			orbit_distance = 0
 			planet = star

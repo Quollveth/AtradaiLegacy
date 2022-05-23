@@ -15,6 +15,18 @@ entity = {
 	playback_rate = 0
 }
 
+entity = {
+	name = "hypertemporal_colossus_half_ring_entity"
+	pdxmesh = "mammalian_colossus_rings_half_mesh"
+
+	get_state_from_parent = no
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	playback_rate = 0
+}
+
 #Tractor beam
 
 entity = {
@@ -315,19 +327,7 @@ entity = {
 }
 
 
-########## RRUINED ##########
-
-entity = {
-	name = "hypertemporal_colossus_half_ring_entity"
-	pdxmesh = "mammalian_colossus_rings_half_mesh"
-
-	get_state_from_parent = no
-
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" }
-
-	playback_rate = 0
-}
+########## RUINED ##########
 
 #Tractor beam 
 

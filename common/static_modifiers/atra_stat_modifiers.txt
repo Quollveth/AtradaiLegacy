@@ -1,10 +1,10 @@
-atradai_temporal_shift = {
+atra_temporal_shift = {
 	planet_researchers_produces_mult = 5
 	planet_orbital_bombardment_damage = -1000
 	icon = "gfx/interface/icons/planet_modifiers/pm_shroud_eaten_population.dds"
 	icon_frame = 1
 }
-atradai_perfect_environment = {
+atra_perfect_environment = {
 	planet_jobs_productive_produces_mult = 1
 	planet_jobs_productive_upkeep_mult = -0.5
 	planet_max_districts_add = 10

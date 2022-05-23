@@ -1,6 +1,6 @@
-##Primitive atradai traits
+##Primitive atra traits
 
-trait_atradai_intelligent = {
+trait_atra_intelligent = {
     cost = 0
 	potential_crossbreeding_chance = 0
 	initial = no
@@ -16,7 +16,7 @@ trait_atradai_intelligent = {
 	}
 }
 
-trait_atradai_unimpressive = {
+trait_atra_unimpressive = {
 	cost = 0
 	potential_crossbreeding_chance = 0
 	initial = no
@@ -29,7 +29,7 @@ trait_atradai_unimpressive = {
 	}
 }
 
-trait_atradai_unionization = {
+trait_atra_unionization = {
 	cost = 0
 	potential_crossbreeding_chance = 0
 	initial = no

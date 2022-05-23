@@ -2,7 +2,7 @@
 ### FIRST AGE ###
 #################
 
-atradai_first_capital = {
+atra_first_capital = {
 	capital = yes
 	can_build = no
 	can_demolish = yes
@@ -28,12 +28,12 @@ atradai_first_capital = {
 		planet_housing_add = 3
 		planet_amenities_add = 25
 		planet_crime_add = -10
-		job_atradai_first_ruler_add = 1
-		job_atradai_first_administrator_add = 2
+		job_atra_first_ruler_add = 1
+		job_atra_first_administrator_add = 2
 	}
 }
 
-atradai_first_factory = {
+atra_first_factory = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
@@ -48,11 +48,11 @@ atradai_first_factory = {
 	}
 
 	planet_modifier = {
-		job_atradai_first_artisans_add = 2
+		job_atra_first_artisans_add = 2
 	}
 }
 
-atradai_first_outpost = {
+atra_first_outpost = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
@@ -67,11 +67,11 @@ atradai_first_outpost = {
 	}
 
 	planet_modifier = {
-		job_atradai_first_courier_add = 3
+		job_atra_first_courier_add = 3
 	}
 }
 
-atradai_first_lab = {
+atra_first_lab = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
@@ -86,11 +86,11 @@ atradai_first_lab = {
 	}
 
 	planet_modifier = {
-		job_atradai_first_researcher_add = 2
+		job_atra_first_researcher_add = 2
 	}
 }
 
-atradai_first_farm = {
+atra_first_farm = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
@@ -105,11 +105,11 @@ atradai_first_farm = {
 	}
 
 	planet_modifier = {
-		job_atradai_first_farmer_add = 5
+		job_atra_first_farmer_add = 5
 	}
 }
 
-atradai_first_mine = {
+atra_first_mine = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
@@ -124,11 +124,11 @@ atradai_first_mine = {
 	}
 
 	planet_modifier = {
-		job_atradai_first_miner_add = 3
+		job_atra_first_miner_add = 3
 	}
 }
 
-atradai_first_houses = {
+atra_first_houses = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no

@@ -1,11 +1,11 @@
-namespace = atradai_kilinea
+namespace = atra_Kliniea
 
 #discovered first kliniea
 ship_event = {
-	id = atradai_kilinea.001
-	title = "atradai_kilinea.001.name"
-	desc = "atradai_kilinea.001.desc"
-	picture = GFX_evt_kilinea
+	id = atra_Kliniea.001
+	title = "atra_Kliniea.001.name"
+	desc = "atra_Kliniea.001.desc"
+	picture = GFX_evt_Kliniea
 	show_sound = event_radio_chatter
 	location = from
 	is_triggered_only = yes
@@ -13,7 +13,7 @@ ship_event = {
 	trigger = {
 		owner = { 
 			NOT = { 
-				has_country_flag = found_first_kilinea
+				has_country_flag = found_first_Kliniea
 				is_ai = yes 
 			} 
 		}
@@ -24,21 +24,21 @@ ship_event = {
 
 	immediate = { 
 		owner = {
-			set_country_flag = found_first_kilinea 
+			set_country_flag = found_first_Kliniea 
 		}
 		from = {
 			set_star_flag = real_kliniea
-			save_global_event_target_as = real_kilinea_target
+			save_global_event_target_as = real_Kliniea_target
 		}
 	}
-	option = { name = "atradai_kilinea.100.a" }
+	option = { name = "atra_Kliniea.100.a" }
 }
-#surveyed kilinea, spawns dig site
+#surveyed Kliniea, spawns dig site
 ship_event = {
-	id = atradai_kilinea.002
-	title = "atradai_kilinea.002.name"
-	desc = "atradai_kilinea.002.desc"
-	picture = GFX_evt_kilinea
+	id = atra_Kliniea.002
+	title = "atra_Kliniea.002.name"
+	desc = "atra_Kliniea.002.desc"
+	picture = GFX_evt_Kliniea
 	show_sound = event_radio_chatter
 	location = from
 	is_triggered_only = yes
@@ -46,7 +46,7 @@ ship_event = {
 	trigger = {
 		owner = {
 			NOT = {
-				has_country_flag = surveyed_first_kilinea
+				has_country_flag = surveyed_first_Kliniea
 				is_ai = yes
 			}
 		}
@@ -55,34 +55,34 @@ ship_event = {
 		}
 	}
 	immediate = {
-		set_country_flag = surveyed_first_kilinea
+		set_country_flag = surveyed_first_Kliniea
 		from = {
-			create_archaeological_site = site_colleda_ruins
-			save_global_event_target_as = atra_real_kilinea
+			create_archaeological_site = site_atra_colleda_ruins
+			save_global_event_target_as = atra_real_Kliniea
 		}
 	}
-	option = { name = "atradai_kilinea.101.a" }
+	option = { name = "atra_Kliniea.101.a" }
 }
 
 #first temporal shift
 #dialogue
 country_event = {
-	id = atradai_kilinea.1000
-	title = atradai_kilinea.1000.name
-	desc = atradai_kilinea.1000.desc
-	picture = GFX_evt_atradai_time_shift
+	id = atra_Kliniea.1000
+	title = atra_Kliniea.1000.name
+	desc = atra_Kliniea.1000.desc
+	picture = GFX_evt_atra_time_shift
 	show_sound = event_mysterious_signal
 	is_triggered_only = yes
 	location = from
 	immediate = {
 		from = {
-			system_event = { id = atradai_kilinea.1001 }
+			system_event = { id = atra_Kliniea.1001 }
 		}
 	}
 }
 #actual event
 system_event = {
-	id = atradai_kilinea.1001
+	id = atra_Kliniea.1001
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -107,7 +107,7 @@ system_event = {
 			set_planet_name = "NAME_colleda"
 			remove_planet_flag = klini_asteroid
 			set_planet_flag = primitive_colleda
-			planet_event = { id = atradai_colleda.100 }
+			planet_event = { id = atra_colleda.100 }
 		}
 		every_system_planet = {
 			limit = { 

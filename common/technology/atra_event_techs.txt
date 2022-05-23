@@ -1,8 +1,10 @@
-tech_atradai_hypertemporal_repair_1 = {
+## Repair techs, given by events
+tech_atra_hypertemporal_repair_1 = {
     area = physics
 	category = { field_manipulation }
 	cost = 2000
 	weight = 0
+	tier = 1
 	prereqfor_desc = {
 		custom = {
 			title = "allow_hypertemporal_repair_p1"
@@ -10,3 +12,4 @@ tech_atradai_hypertemporal_repair_1 = {
 		}
 	}
 }
+

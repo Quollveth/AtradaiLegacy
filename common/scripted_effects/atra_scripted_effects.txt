@@ -23,7 +23,7 @@ star_eater_effect_only = {
 ### LETS JUST ADD EVERY PLANETARY FEATURE, WHAT COULD GO WRONG ###
 ##################################################################
 
-atradai_add_gaia_features = {
+atra_add_gaia_features = {
 	#energy
 	add_deposit = d_arid_highlands
 	add_deposit = d_hot_springs
@@ -72,27 +72,27 @@ atradai_add_gaia_features = {
 ### PRIMITIVES ###
 ##################
 
-#create first Atradai
-generate_first_atradai_primitives = {
-	set_global_flag = first_atradai_primitive_created
+#create first atra
+generate_first_atra_primitives = {
+	set_global_flag = first_atra_primitive_created
 	create_species = {
-		name = "Atradai"
-		plural = "Atradai"
+		name = "atra"
+		plural = "atra"
 		class = HUM
 		portrait = mol12
 		homeworld = THIS
 		traits = {
 			trait = trait_pc_gaia_preference
-			trait = trait_atradai_intelligent
-			trait = trait_atradai_unimpressive
-			trait = trait_atradai_unionization
+			trait = trait_atra_intelligent
+			trait = trait_atra_unimpressive
+			trait = trait_atra_unionization
 		}
 		effect = {
-			save_global_event_target_as = atradai_species_p
+			save_global_event_target_as = atra_species_p
 		}
 	}
 	create_country = {
-		name = "Atradai Clans"
+		name = "atra Clans"
 		name_list = random
 		authority = random
 		civics = {
@@ -124,29 +124,29 @@ generate_first_atradai_primitives = {
 	}
 	last_created_country = {
 		set_graphical_culture = industrial_01
-		set_country_flag = first_atradai_age
-		set_primitive_age = first_atradai_age
-		set_country_flag = atradai_primitives
-		save_global_event_target_as = atradai_country_1
+		set_country_flag = first_atra_age
+		set_primitive_age = first_atra_age
+		set_country_flag = atra_primitives
+		save_global_event_target_as = atra_country_1
 	}
 	while = {
 		count = 14
 		create_pop = {
-			species = event_target:atradai_species_p
+			species = event_target:atra_species_p
 		}
 	}
 }
 
-setup_first_atradai_primitives = {
-	set_owner = event_target:atradai_country_1
+setup_first_atra_primitives = {
+	set_owner = event_target:atra_country_1
 	set_capital = yes
-	add_building = atradai_first_capital
-	add_building = atradai_first_outpost
-	add_building = atradai_first_lab
-	add_building = atradai_first_farm 
-	add_building = atradai_first_mine
-	add_building = atradai_first_factory
-	add_building = atradai_first_houses
+	add_building = atra_first_capital
+	add_building = atra_first_outpost
+	add_building = atra_first_lab
+	add_building = atra_first_farm 
+	add_building = atra_first_mine
+	add_building = atra_first_factory
+	add_building = atra_first_houses
 	create_temporal_anomaly_armies = yes
 }
 
@@ -155,8 +155,8 @@ create_temporal_anomaly_armies = {
 		count = 5	
 		create_army = { 
 			name = "Temporal Anomaly"	
-			owner = event_target:atradai_country_1
-			type = "atradai_temporal_anomaly_army" 
+			owner = event_target:atra_country_1
+			type = "atra_temporal_anomaly_army" 
 		} 
 	}
 }

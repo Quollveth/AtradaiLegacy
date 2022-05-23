@@ -1,19 +1,15 @@
 on_game_start_country = {
-	events = { atradai_start.0 } 
+	events = { atra_start.0 } 
 }
 
 on_entering_system_first_time = {
-	events = { atradai_kilinea.001 } #found Kilinea
+	events = { atra_Kliniea.001 } #found Kliniea
 }
 
 on_survey = {
-	events = { atradai_kilinea.002 } #surveyed kilinea
-}
-
-on_tech_increased = {
-	events = { atradai_hypertemporal.1002 } #researched first hypertemporal repair
+	events = { atra_Kliniea.002 } #surveyed Kliniea
 }
 
 on_ground_combat_started = {
-	events = { atradai_colleda.105 }
+	events = { atra_colleda.105 }
 }

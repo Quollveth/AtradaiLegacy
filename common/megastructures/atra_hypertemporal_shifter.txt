@@ -1,16 +1,16 @@
 ##Hypertemporal shifter
 
-atradai_hypertemporal_ruined = {
+atra_hypertemporal_ruined = {
 	entity = "hypertemporal_full_broken_entity"
 	portrait = "GFX_megastructure_construction_background"
 	potential = { always = no }
 }
 
-atradai_hypertemporal_repair_1 = {
+atra_hypertemporal_repair_1 = {
 	entity = "hypertemporal_full_entity"
 	construction_entity = "hypertemporal_full_entity"
 	portrait = "GFX_megastructure_construction_background"
-	upgrade_from = { atradai_hypertemporal_ruined }
+	upgrade_from = { atra_hypertemporal_ruined }
 
 	build_time = 5000
 	resources = {
@@ -30,7 +30,7 @@ atradai_hypertemporal_repair_1 = {
 	
 	possible = { 
 		from = { 
-			has_technology = tech_atradai_hypertemporal_repair_1
+			has_technology = tech_atra_hypertemporal_repair_1
 		}
 		custom_tooltip = {
 			fail_text = "hypertemporal_one_per_galaxy"
@@ -51,7 +51,7 @@ atradai_hypertemporal_repair_1 = {
 			if = {
 				limit = { NOT = { has_country_flag = restored_hypertemporal } }
 				set_country_flag = restored_hypertemporal
-				country_event = { id = atradai_kilinea.1000 }
+				country_event = { id = atra_Kliniea.1000 }
 			}
 		}
 	}

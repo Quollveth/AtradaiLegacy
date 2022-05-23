@@ -1,4 +1,4 @@
-atradai_first_farmer = {
+atra_first_farmer = {
 	category = worker
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -8,7 +8,7 @@ atradai_first_farmer = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	resources = {
@@ -23,7 +23,7 @@ atradai_first_farmer = {
 	}
 }
 
-atradai_first_miner = {
+atra_first_miner = {
 	category = worker
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -33,7 +33,7 @@ atradai_first_miner = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	resources = {
@@ -48,7 +48,7 @@ atradai_first_miner = {
 	}
 }
 
-atradai_first_courier = {
+atra_first_courier = {
 	category = specialist
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -58,7 +58,7 @@ atradai_first_courier = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	resources = {
@@ -76,7 +76,7 @@ atradai_first_courier = {
 	}
 }
 
-atradai_first_artisans = {
+atra_first_artisans = {
 	category = specialist
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -86,7 +86,7 @@ atradai_first_artisans = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	resources = {
@@ -104,7 +104,7 @@ atradai_first_artisans = {
 	}
 }
 
-atradai_first_researcher = {
+atra_first_researcher = {
 	category = specialist
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -114,7 +114,7 @@ atradai_first_researcher = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	resources = {
@@ -134,7 +134,7 @@ atradai_first_researcher = {
 	}
 }
 
-atradai_first_administrator = {
+atra_first_administrator = {
 	category = ruler
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -144,7 +144,7 @@ atradai_first_administrator = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	planet_modifier = {
@@ -163,7 +163,7 @@ atradai_first_administrator = {
 	}
 }
 
-atradai_first_ruler = {
+atra_first_ruler = {
 	category = ruler
 	is_capped_by_modifier = yes
 	clothes_texture_index = 2
@@ -173,7 +173,7 @@ atradai_first_ruler = {
 	}
 
 	possible = {
-		owner = { has_country_flag = atradai_primitives }
+		owner = { has_country_flag = atra_primitives }
 	}
 
 	planet_modifier = {

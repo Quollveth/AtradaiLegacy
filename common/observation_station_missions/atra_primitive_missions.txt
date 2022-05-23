@@ -1,5 +1,5 @@
 # First Primitives
-first_atradai_observation = {
+atra_first_observation = {
 	icon = "GFX_fleet_task_passive_observation"
 	small_icon = 1
 
@@ -13,13 +13,13 @@ first_atradai_observation = {
 	}
 
 	#monthly_progress = 0.05 #20 months to finish
-	monthly_progress = 1
-	completion_event = atradai_observation.1000
+	monthly_progress = 0.5
+	completion_event = atra_observation.1000
 
 	potential = {
 		FROM = {
 			exists = owner
-			owner = { has_country_flag = first_atradai_age }
+			owner = { has_country_flag = first_atra_age }
 		}
 	}
 
